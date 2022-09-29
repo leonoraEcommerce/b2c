@@ -1,0 +1,15 @@
+body.laures__headerSearch {
+    .search-banner {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1920px;
+        img {
+            display: block;
+            margin-bottom: 0;
+            width: 100%;
+            min-height: 100px;
+            object-fit: cover;
+        }
+    }
+}

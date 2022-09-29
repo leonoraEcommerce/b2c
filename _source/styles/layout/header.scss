@@ -1,0 +1,26 @@
+header.header {
+    z-index: 5;
+    .menu__item.natal {
+        border-radius: 30px;
+        padding: 0 15px;
+    }
+    .menu__link:before {
+        background: $primary;
+    }
+    .menu__natal {
+        font-size: 12px;
+        font-weight: 800;
+    }
+}
+
+
+@media screen and (max-width: 780px) {
+    .header {
+        .header__menu {
+            display: none;
+            &.header__menu--open {
+                display: block;
+            }
+        }
+    }
+}

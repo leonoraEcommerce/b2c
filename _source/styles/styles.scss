@@ -1,0 +1,46 @@
+// theme
+@import "partials/theme";
+
+// utilities
+@import "partials/mixins";
+@import "partials/reset";
+@import "partials/utilities";
+
+// components
+@import "components/shelf-item";
+// @import "components/c_mascotChat";
+@import "components/c_toggleList";
+// @import "components/c_smartMenu";
+@import "components/c_responsiveGrid";
+@import "components/minicart";
+@import "components/e-product-bar";
+@import "components/c_countDown";
+@import "components/c_transportRuler";
+
+@import "components/c_animationCarnaval";
+@import "components/c_animationButtonFeatured";
+
+// sections
+@import "sections/home-banner-marcas";
+@import "sections/beon-showcase";
+@import "sections/product-info";
+@import "sections/new-benefitsBar";
+@import "sections/sSliderFeaturedCategories";
+@import "components/c_countDown";
+
+// layouts
+@import "layout/acount";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/search-banner";
+@import "layout/home-banner-full";
+@import "layout/main";
+
+// lps
+@import "landPages/lp__default";
+// @import "landPages/lp_carnaval";
+// @import "landPages/lp_mesDoCliente";
+@import "landPages/lp_mesDasMaes";
+@import "landPages/lp_domBosco";
+@import "landPages/lp_letron";
+

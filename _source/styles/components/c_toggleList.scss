@@ -1,0 +1,73 @@
+.c-toggleList {
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0px 5.05261px 11.228px rgba(0, 0, 0, 0.06), 0px 3.27484px 6.57566px rgba(0, 0, 0, 0.0455556), 0px 1.94619px 3.57633px rgba(0, 0, 0, 0.0364444), 0px 1.01052px 1.82455px rgba(0, 0, 0, 0.03), 0px 0.411694px 0.914875px rgba(0, 0, 0, 0.0235556), 0px 0.0935668px 0.441843px rgba(0, 0, 0, 0.0144444);
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    &__header {
+        @include transition();
+        @include roundedAll();
+        padding: 10px 20px;
+        padding-right: 45px;
+        display: block;
+        position: relative;
+        cursor: pointer;
+        //background: #ccc;
+        > * {
+            @include transition();
+            color: black;
+        }
+        &:after {
+            @include transition();
+            @include transforms(translateY(-50%), center);
+            content: '';
+            display: block;
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            background: #d5d5d5;
+        }
+        &:hover {
+            // background: #c5c5c5;
+        }
+    }
+    &__content {
+        @include rounded(bottom, left, 10px);
+        @include rounded(bottom, right, 10px);
+        @include transition();
+        @include u-hideElement;
+        display: block;
+        padding: 0 20px;
+        overflow: hidden;
+        max-height: 0;
+        // border-left: 2px solid #ccc;
+        // border-right: 2px solid #ccc;
+        // border-bottom: 2px solid #ccc;
+    }
+
+    &.is-active {
+        .c-toggleList__header {
+            @include rounded(bottom, left, 0);
+            @include rounded(bottom, right, 0);
+            // background: teal;
+            &:after {
+                @include transforms(translateY(-50%) rotate(180deg), center);
+            }
+            &:hover {
+                // background: blue;
+            }
+            > * {
+                // color: white;
+            }
+        }
+        .c-toggleList__content {
+            @include u-showElement;
+            position: relative;
+            padding: 20px;
+            max-height: inherit;
+        }
+    }
+}

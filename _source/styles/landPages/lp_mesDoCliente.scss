@@ -1,0 +1,231 @@
+$lpMesDoCliente__primary: #007195;
+$lpMesDoCliente__primaryDark: #015975;
+$lpMesDoCliente__primaryLight: #A067BE;
+$lpMesDoCliente__ff__lemonMilk: 'LEMON MILK';
+
+@font-face {
+    font-family: 'LEMON MILK';
+    src: url('https://leonora.vteximg.com.br/arquivos/font_lemonMilk.css') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@mixin lpMesDoCliente__titles($tc: $lpMesDoCliente__primary, $fs: 36px) {
+    display: block;
+    width: 100%;
+    font-size: $fs;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $tc;
+    font-family: $lpMesDoCliente__ff__lemonMilk;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+@mixin lpMesDoCliente__btns($bg: $lpMesDoCliente__primary, $bgH: $lpMesDoCliente__primaryLight) {
+    @include transition();
+    @include roundedAll(30px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: $bg;
+    height: 50px;
+    width: 100%;
+    max-width: 370px;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    font-family: $lpMesDoCliente__ff__lemonMilk;
+    &:hover,
+    &:focus,
+    &:active {
+        background: $bgH;
+        text-decoration: none !important;
+    }
+}
+@mixin lpMesDoCliente__btnCategorie() {
+    @include transition();
+    @include roundedAll(20px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: $lpMesDoCliente__primary;
+    height: 40px;
+    width: 100%;
+    line-height: 1;
+    font-family: $lpMesDoCliente__ff__lemonMilk;
+    span {
+        color: $white;
+        font-weight: 700;;
+        text-transform: uppercase;
+        font-size: 18px;
+        z-index: 2;
+        white-space: nowrap;
+        padding: 0 10px;
+        line-height: 1;
+        font-family: $lpMesDoCliente__ff__lemonMilk;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        background: $lpMesDoCliente__primary;
+        text-decoration: none;
+        &:before {
+            background: $lpMesDoCliente__primaryDark;
+        }
+        span {
+            text-decoration: none;
+        }
+    }
+    &.is-active {
+        background: $lpMesDoCliente__primaryLight;
+    }
+}
+
+.l-landPage.--mesDoCliente {
+    // components
+    .c-btnCategorie {
+        @include lpMesDoCliente__btnCategorie;
+    }
+
+    // features
+    .l-landPage__features {
+        position: relative;
+        .u-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+        }
+        h1 {
+            @include lpMesDoCliente__titles;
+        }
+        .c-btn {
+            @include lpMesDoCliente__btns();
+        }
+    }
+
+    // countdown
+    .l-landPage__countdown {
+        background: $lpMesDoCliente__primary;
+        .c-countdown {
+            &__hero {
+                .captions {
+                    h3 {
+                        @include lpMesDoCliente__titles($tc: $white, $fs: 24px);
+                        text-align: left;
+                        margin-bottom: 6px;
+                    }
+                    span {
+                        display: block;
+                        text-align: center;
+                        color: $white;
+                        font-size: 12px;
+                    }
+                }
+                .c-count {
+                    &__item {
+                        .number,
+                        .caption {
+                            display: block;
+                            text-align: center;
+                            color: $white;
+                        }
+                        .number {
+                            font-size: 60px;
+                            line-height: 60px;
+                        }
+                        .caption {
+                            text-transform: uppercase;
+                            font-weight: $fwBold;
+                            font-size: 10px;
+                            display: none;
+                        }
+                    }
+                }
+            }
+            &__end {
+                p, span {
+                    display: block;
+                    text-align: center;
+                    color: $white;
+                    font-family: $lpMesDoCliente__ff__lemonMilk;
+                    font-size: 20px;
+                }
+                span {
+                    margin-top: 5px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    // collections
+    .l-landPage__collections {
+        display: block;
+        position: relative;
+        .u-container {
+            position: relative;
+            z-index: 2;
+        }
+        .l-landPage__collections__title {
+            h2 {
+                @include lpMesDoCliente__titles;
+            }
+        }
+        .l-landPage__collections__menu {
+            ul {
+                left: 0;
+                width: 100%;
+                padding-left: 0;
+            }
+        }
+        .c-btn {
+            @include lpMesDoCliente__btns();
+        }
+    }
+
+    // shelf-item
+    .shelf-item {
+        border: 2px solid $lpMesDoCliente__primary;
+        &__flags {
+            .flag-percentage {
+                background: $lpMesDoCliente__primaryLight;
+                color: $white;
+                font-family: $lpMesDoCliente__ff__lemonMilk;
+                line-height: 0.9;
+            }
+        }
+        &__btns {
+            a {
+                @include transition();
+                background: $lpMesDoCliente__primary !important;
+                &:hover {
+                    background: $lpMesDoCliente__primaryDark !important;
+                }
+            }
+        }
+        &__price {
+            .shelf-item__best-price {
+                font-family: $lpMesDoCliente__ff__lemonMilk;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .l-landPage.--mesDoCliente .l-landPage__countdown .c-countdown__hero .captions h3 {
+        text-align: center;
+        font-size: 20px;
+    }
+    .l-landPage.--mesDoCliente .l-landPage__countdown .c-countdown__hero .c-count__item .number {
+        font-size: 44px;
+        line-height: 44px;
+    }
+}

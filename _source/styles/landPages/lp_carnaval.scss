@@ -1,0 +1,291 @@
+$lpCarnaval__blue: #5A91E4;
+$lpCarnaval__blueDark: #683A8A;
+$lpCarnaval__pink: #E92F80;
+$lpCarnaval__pinkDark: #c11b63;
+$lpCarnaval__ff__lemonMilk: 'LEMON MILK';
+
+@font-face {
+    font-family: 'LEMON MILK';
+    src: url('https://leonora.vteximg.com.br/arquivos/font_lemonMilk.css') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@mixin lpCarnaval__titles($tc: $lpCarnaval__blue, $fs: 36px) {
+    display: block;
+    width: 100%;
+    font-size: $fs;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $tc;
+    font-family: $lpCarnaval__ff__lemonMilk;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+@mixin lpCarnaval__btns($bg: $lpCarnaval__pink, $bgH: $lpCarnaval__blue) {
+    @include transition();
+    @include roundedAll(30px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: $bg;
+    height: 50px;
+    width: 100%;
+    max-width: 370px;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    font-family: $lpCarnaval__ff__lemonMilk;
+    &:hover,
+    &:focus,
+    &:active {
+        background: $bgH;
+        text-decoration: none !important;
+    }
+}
+@mixin lpCarnaval__btnCategorie() {
+    @include transition();
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: $lpCarnaval__blue;
+    height: 40px;
+    width: 100%;
+    line-height: 1;
+    font-family: $lpCarnaval__ff__lemonMilk;
+    &:before {
+        @include transition();
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        background: $lpCarnaval__blueDark;
+    }
+    span {
+        color: $white;
+        font-weight: 700;;
+        text-transform: uppercase;
+        font-size: 22px;
+        position: relative;
+        top: -10px;
+        left: -10px;
+        z-index: 2;
+        white-space: nowrap;
+        padding: 0 10px;
+        line-height: 1;
+        font-family: $lpCarnaval__ff__lemonMilk;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        background: $lpCarnaval__pink;
+        text-decoration: none;
+        &:before {
+            background: $lpCarnaval__pinkDark;
+        }
+        span {
+            text-decoration: none;
+        }
+    }
+    &.is-active {
+        background: $lpCarnaval__pinkDark;
+        &:before {
+            background: $lpCarnaval__pink;
+        }
+    }
+}
+
+.l-landPage.--carnaval {
+    // components
+    .c-btnCategorie {
+        @include lpCarnaval__btnCategorie;
+    }
+    .c-fixedEnllaxElement {
+        @include transition($duration: 650ms);
+        display: inline-block;
+        position: absolute;
+        z-index: 1;
+        img {
+            @include transition();
+            display: block;
+        }
+        &.--a {
+            top: 80px;
+            left: 80px;
+            img:hover {
+                @include rotate(-35deg, center);
+            }
+        }
+        &.--b {
+            bottom: 35px;
+            left: 70px;
+            img:hover {
+                @include scale(1.1, center);
+            }
+        }
+        &.--c {
+            bottom: 35px;
+            left: 50px;
+            img:hover {
+                @include rotate(10deg, center);
+            }
+        }
+        &.--d {
+            top: 50px;
+            right: 60px;
+            img:hover {
+                @include rotate(-20deg, center);
+            }
+        }
+        &.--e {
+            top: 50%;
+            right: 60px;
+            img:hover {
+                @include scale(1.1, center);
+            }
+        }
+        &.--f {
+            bottom: 50px;
+            right: 80px;
+            img:hover {
+                @include scale(0.9, center);
+            }
+        }
+        &.--g {
+            top: 50px;
+            left: 60px;
+            img:hover {
+                @include rotate(20deg, center);
+            }
+        }
+        &.--h {
+            top: 25%;
+            left: 50px;
+            img:hover {
+                @include scale(1.1, center);
+            }
+        }
+        &.--i {
+            bottom: 35%;
+            left: 40px;
+            img:hover {
+                @include rotate(15deg, center);
+            }
+        }
+        &.--j {
+            bottom: 80px;
+            left: 50px;
+            img:hover {
+                @include scale(1.1, center);
+            }
+        }
+        &.--k {
+            top: 60px;
+            right: 40px;
+            img:hover {
+                @include rotate(10deg, center);
+            }
+        }
+        &.--l {
+            top: 33%;
+            right: 55px;
+            img:hover {
+                @include rotate(20deg, center);
+            }
+        }
+        &.--m {
+            bottom: 70px;
+            right: 50px;
+            img:hover {
+                @include rotate(-20deg, center);
+            }
+        }
+    }
+
+    // features
+    .l-landPage__features {
+        position: relative;
+        .u-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+        }
+        h1 {
+            @include lpCarnaval__titles;
+        }
+        .c-btn {
+            @include lpCarnaval__btns();
+        }
+    }
+
+    // collections
+    .l-landPage__collections {
+        display: block;
+        position: relative;
+        .u-container {
+            position: relative;
+            z-index: 2;
+        }
+        .l-landPage__collections__title {
+            h2 {
+                @include lpCarnaval__titles;
+            }
+        }
+        .c-btn {
+            @include lpCarnaval__btns();
+        }
+    }
+
+    // shelf-item
+    .shelf-item {
+        border: 2px solid $lpCarnaval__pink;
+        &__flags {
+            .flag-percentage {
+                background: #F8B215;
+                color: #414141;
+                font-family: $lpCarnaval__ff__lemonMilk;
+                line-height: 0.9;
+            }
+        }
+        &__btns {
+            a {
+                @include transition();
+                background: $lpCarnaval__pink !important;
+                &:hover {
+                    background: $lpCarnaval__pinkDark !important;
+                }
+            }
+        }
+        &__price {
+            .shelf-item__best-price {
+                font-family: $lpCarnaval__ff__lemonMilk;
+            }
+        }
+    }
+}
+
+// responsive - float elements
+@media screen and (max-width: 1240px) {
+    .c-fixedEnllaxElement {
+        img {
+            max-width: 35px;
+        }
+    }
+}
+@media screen and (max-width: 780px) {
+    .c-fixedEnllaxElement {
+        img {
+            max-width: 25px;
+        }
+    }
+}

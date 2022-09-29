@@ -1,0 +1,12 @@
+footer.footer {
+    // alinhar bg newsletter
+    .footer-content {
+        background-position: center;
+        .footer-content-newsletter-form__button {
+            background: $primary !important;
+            &:hover {
+                background: $primaryDark !important;
+            }
+        }
+    }
+}

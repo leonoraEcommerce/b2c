@@ -1,0 +1,97 @@
+@font-face {
+  font-family: 'DS-Digital';
+  src: url('https://leonora.vteximg.com.br/arquivos/leonora_font__dsDigital.css') format('woff'),
+  url('https://leonora.vteximg.com.br/arquivos/leonora_font__dsDigital.css') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.c-countdown {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  &__hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    .captions {
+      padding-right: 20px;
+      position: relative;
+      h3 {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      span {
+        display: block;
+      }
+    }
+  }
+  &__end {
+    display: none;
+  }
+}
+.c-count {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  &__item {
+    margin-right: 15px !important;
+    display: block;
+    position: relative;
+    &:last-of-type {
+      margin-right: 0;
+      .number {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+  .number {
+    display: block;
+    font-family: 'DS-Digital';
+    position: relative;
+    &:after {
+      content: ':';
+      display: block;
+      font-family: 'DS-Digital';
+      position: absolute;
+      top: -2px;
+      right: -13px;
+    }
+  }
+  .caption {
+    //display: none;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .c-countdown {
+    padding: 10px 0 5px 0;
+  }
+  .c-countdown__hero {
+    display: block;
+    .captions {
+      width: 100%;
+      top: 0;
+      padding-right: 0;
+      margin-bottom: 0;
+      * {
+        text-align: center;
+      }
+      span {
+        font-size: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+// fix - slick dots
+.home-banner-full-desktop {
+    .slick-dots {
+        display: flex !important;
+        justify-content: center !important;
+        flex-wrap: nowrap !important;
+        bottom: 20px !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: 240px !important;
+        > li {
+            height: 6px !important;
+            margin: 0 7px !important;
+            line-height: 1 !important;
+            font-size: inherit !important;
+            button {
+                color: transparent !important;
+            }
+        }
+    }
+}
+
+// fix - banner align
+.home-banner-full-desktop,
+.home-banner-full {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}

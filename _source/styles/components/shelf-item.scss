@@ -1,0 +1,57 @@
+.shelf-item {
+    .shelf-item__btn-more {
+        line-height: 1;
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background: $primary !important;
+        &:hover {
+            background: $primaryDark !important;
+        }
+    }
+
+    .flag-percentage {
+        display: none !important;
+    }
+    &.flag-zero-percent {
+        .flag-percentage {
+            display: none !important;
+        }
+    }
+    &.flag-with-percent {
+        .flag-percentage {
+            display: flex !important;
+        }
+    }
+
+
+    // selo arraial
+    .shelf-item__img {
+        .shelf-item__img-link {
+            position: relative;
+        }
+        .shelf-item__promotionTag {
+            width: 50px;
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            right: 0;
+            display: none !important;
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+// selo arraial - show
+body.colecao.arraial-de-ofertas {
+    .shelf-item {
+        .shelf-item__img {
+            .shelf-item__promotionTag {
+                display: block !important;
+            }
+        }
+    }
+}

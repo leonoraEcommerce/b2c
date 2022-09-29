@@ -1,0 +1,4 @@
+{
+    // effects
+    $('.js-enllax').enllax();
+}

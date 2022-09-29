@@ -1,0 +1,627 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+$letron__bg: #242424;
+$letron__bg__light: #393939;
+$letron__gradient: linear-gradient(180deg, #12132E 0%, #242424 100%), #202031;
+
+@keyframes coverImg {
+	from {
+		@include transforms(rotate(0deg) translate(-5px), center);
+	}
+	to {
+		@include transforms(rotate(5deg) translate(0px), center);
+	}
+}
+@mixin animation_coverImg() {
+	animation-name: coverImg;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+}
+
+@mixin s-letron__titles() {
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-weight: $fwMedium;
+	font-size: 44px;
+	line-height: 52px;
+	color: $white;
+	margin-bottom: 15px !important;
+	margin-top: 0 !important;
+}
+@mixin s-letron__p($ta: left) {
+	display: block;
+	width: 100%;
+	text-align: $ta;
+	font-weight: $fwRegular;
+	font-size: 18px;
+	line-height: 26px;
+	color: $white;
+}
+
+body.landingPage__letron {
+	footer.footer {
+		margin-top: 0;
+	}
+}
+.l-landPage.--letron {
+	max-width: 100%;
+	background: #1A1A1A;
+	overflow: hidden;
+	* {
+		font-family: 'Roboto' !important;
+	}
+	.c-btn {
+		@include transition();
+		@include roundedAll(20px);
+		display: inline-block;
+		padding: 0 20px;
+		height: 40px;
+		line-height: 40px;
+		background: #0060D0;
+		font-weight: $fwSemiBold;
+		color: $white;
+		&:hover {
+			background: #04438D;
+		}
+	}
+	.c-letronVideo {
+		@include roundedAll();
+		display: block;
+		overflow: hidden;
+		width: 100%;
+		padding-top: 56%;
+		position: relative;
+		* {
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	.slick-arrow {
+		display: block;
+		width: 60px;
+		height: 60px;
+		top: 50% !important;
+		//background-color: #fff;
+		background-image: url('https://leonora.vteximg.com.br/arquivos/lpLetron_caretSlider.png');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		color: transparent;
+		&:before {
+			display: none;
+		}
+	}
+	.slick-next {
+		right: -60px;
+		margin-top: 0 !important;
+	}
+	.slick-prev {
+		@include rotate(180deg, center);
+		left: -60px;
+		margin-top: -30px !important;
+	}
+}
+.l-navLetron {
+	position: fixed;
+	top: 125px;
+	left: 0;
+	z-index: 8;
+	display: block;
+	width: 100%;
+	background: rgba(50,50,50,0.95);
+	ul {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		padding: 20px;
+		margin: 0;
+		li {
+			list-style-type: none;
+		}
+	}
+	a {
+		@include transition();
+		font-size: 16px;
+		font-weight: $fwLight;
+		color: $white;
+		padding: 5px 20px;
+		&:hover {
+			color: $primary;
+		}
+	}
+}
+.l-headerLetron {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+	max-width: 1728px;
+	margin: 0 auto;
+	position: relative;
+	height: 590px;
+	&__content {
+		@include flexWidth(100%);
+		position: relative;
+		z-index: 4;
+		.u-container {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-end;
+			justify-content: space-between;
+			max-width: 1400px;
+			padding-right: 100px;
+		}
+		&__brand {
+			@include flexWidth(630px);
+			* {
+				display: block;
+				width: 100%;
+			}
+		}
+		&__cta {
+			display: block;
+			max-width: 250px;
+			h2 {
+				color: $white;
+				font-weight: $fwLight;
+				line-height: 1.1;
+				font-size: 32px;
+				margin-bottom: 15px;
+			}
+		}
+	}
+	&__products {
+		@include flexWidth(100%);
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 3;
+		padding-top: 20px;
+		* {
+			display: block;
+			text-align: center;
+			margin: 0 auto;
+		}
+		img {
+			@include transition;
+			@include animation_coverImg();
+		}
+	}
+	&__effect {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		.u-container {
+			text-align: right;
+			max-width: 1400px;
+			position: relative;
+			top: 45px;
+			padding-right: 25px;
+		}
+	}
+	&__bg {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		* {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+.l-contentLetron {
+	background: $letron__gradient;
+	padding-top: 160px;
+	padding-bottom: 80px;
+	display: block;
+	position: relative;
+	&__effect {
+		display: block;
+		position: absolute;
+		z-index: 1;
+		&.--a {
+			top: -350px;
+			left: 0;
+		}
+		&.--b {
+			top: 300px;
+			right: 0;
+		}
+		&.--c {
+			top: 60%;
+			left: 0;
+		}
+		&.--d {
+			bottom: 0;
+			right: 0;
+		}
+	}
+	> section {
+		position: relative;
+		z-index: 2;
+	}
+}
+.s-letron__quality {
+	.u-container {
+		max-width: 710px;
+	}
+	h2 {
+		@include s-letron__titles;
+	}
+	p {
+		@include s-letron__p($ta: center);
+	}
+}
+.s-letron__videos {
+	margin-top: 25px;
+}
+.s-letron__shelve {
+	margin-top: 100px;
+	.u-container {
+		max-width: 1440px;
+	}
+	&__head {
+		h2 {
+			@include s-letron__titles;
+		}
+	}
+	&__hero {
+		.main-shelf {
+			> h2 {
+				display: none;
+			}
+			.slick-slide {
+				> div > ul {
+					padding: 0 !important;
+					> li {
+						padding: 0 10px;
+					}
+				}
+			}
+		}
+		.shelf-item {
+			@include roundedAll();
+			background: #393939;
+			padding: 0 0 60px 0;
+			&:after {
+				content: '';
+				@include roundedAll(20px);
+				display: block;
+				width: 40px;
+				height: 40px;
+				background: #393939;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			&:before {
+				display: none;
+			}
+
+			// top absolute elements
+			&__favorites {
+				top: 10px;
+				left: 10px;
+				span {
+					filter: invert(1);
+				}
+			}
+			&__flags {
+
+			}
+
+			// thumb
+			&__img {
+				position: static;
+				> a, > a * {
+					@include roundedAll();
+					overflow: hidden;
+				}
+			}
+			&__extra {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				padding: 15px;
+				width: 100%;
+				display: block;
+				* {
+					width: 100%;
+				}
+			}
+			&__btns {
+				a {
+					@include transforms(translateX(0), center);
+					left: 0;
+					bottom: 0;
+					position: relative;
+				}
+			}
+
+			// content
+			&__info {
+				padding: 10px 20px 10px 20px;
+			}
+			&__title {
+				min-height: 100px;
+				a {
+					color: $white;
+					height: auto;
+					margin-bottom: 0;
+					padding: 0;
+					font-size: 16px;
+					line-height: 22px;
+					font-weight: 500;
+					&:hover {
+						color: #21A81E;
+					}
+				}
+			}
+			&__buy-info {
+				height: auto;
+			}
+			&__price {
+				margin-top: 20px;
+				.shelf-item__best-price {
+					color: $white !important;
+					margin-top: 0 !important;
+					font-size: 22px;
+					padding-top: 20px;
+					position: relative;
+					min-width: 60px;;
+					text-align: center;
+					&:before {
+						content: '';
+						display: block;
+						width: 50px;
+						height: 2px;
+						background: #57a122;
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						margin: 0 auto;
+					}
+				}
+			}
+			&__installments {
+				display: none;
+			}
+
+
+
+			&__extra {
+
+			}
+			&__btns {
+				a {
+					background: linear-gradient(269.94deg, #21A81E 16.1%, #0F7B0D 99.9%) !important;
+					width: 100%;
+					height: 36px;
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+			&__price {
+
+			}
+		}
+	}
+}
+
+// header
+@media screen and (max-width: 1140px) {
+	.l-headerLetron {
+		height: 420px;
+	}
+	.l-headerLetron__content .u-container {
+		padding-right: 40px;
+	}
+	.l-headerLetron__content__brand {
+		@include flexWidth(430px);
+	}
+	.l-headerLetron__content__cta {
+		max-width: 230px;
+		h2 {
+			font-size: 28px;
+		}
+	}
+	.l-headerLetron__effect {
+		img {
+			max-width: 460px;
+			position: relative;
+			right: -20px;
+			top: -20px;
+		}
+	}
+	.l-headerLetron__products {
+		img {
+			max-height: 500px;
+		}
+	}
+}
+@media screen and (max-width: 960px) {
+	.l-headerLetron__content .u-container {
+		padding-right: 20px;
+	}
+	.l-headerLetron__effect img {
+		right: -50px;
+	}
+}
+@media screen and (max-width: 780px) {
+	.l-headerLetron {
+		height: auto;
+		padding: 100px 0 60px 0;
+		&__content {
+			.u-container {
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			&__brand {
+				@include cleanFlexWidth();
+				max-width: 480px;
+			}
+			&__cta {
+				@include cleanFlexWidth();
+				max-width: 330px;
+				h2 {
+					text-align: center;
+				}
+				.c-btn {
+					display: block !important;
+					max-width: 230px !important;
+					margin-left: auto;
+					margin-right: auto;
+				}
+			}
+		}
+		&__effect {
+			overflow: hidden;
+			.u-container {
+				text-align: center;
+			}
+			img {
+				right: 20px;
+				top: inherit;
+				bottom: -70px;
+			}
+		}
+		&__products {
+			padding-top: 390px;
+			img {
+				max-height: 280px;
+			}
+		}
+	}
+}
+
+// content
+@media screen and (max-width: 1520px) {
+	.l-landPage.--letron .s-letron__shelve {
+		.slick-next {
+			right: 12px;
+			z-index: 2;
+			margin-top: -80px !important;
+		}
+		.slick-prev {
+			left: 12px;
+			z-index: 2;
+			margin-top: -80px !important;
+		}
+	}
+}
+@media screen and (max-width: 780px) {
+	.l-contentLetron {
+		padding-top: 200px;
+	}
+}
+@media screen and (max-width: 991px) {
+	.s-letron__shelve__hero .main-shelf .slick-slide>div>ul>li {
+		padding: 0 5px;
+	}
+	.s-letron__shelve__hero .shelf-item__title a {
+		font-size: 12px;
+		line-height: 16px;
+	}
+	.s-letron__shelve__hero .shelf-item__info {
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-bottom: 60px !important;
+	}
+	.slick-slider.slick-initialized .slick-list {
+		width: 100% !important;
+	}
+}
+
+// effects
+@media screen and (max-width: 1240px) {
+	.l-contentLetron__effect.--a {
+		top: -220px;
+		img {
+			width: 300px;
+		}
+	}
+	.l-contentLetron__effect.--b {
+		img {
+			width: 250px;
+		}
+	}
+	.l-contentLetron__effect.--c {
+		img {
+			width: 250px;
+		}
+	}
+	.l-contentLetron__effect.--d {
+		img {
+			width: 250px;
+		}
+	}
+}
+@media screen and (max-width: 780px) {
+	.l-contentLetron__effect {
+		display: none !important;
+	}
+}
+
+// nav
+@media screen and (max-width: 991px) {
+	.l-navLetron {
+		top: 85px;
+	}
+}
+@media screen and (max-width: 700px) {
+	.l-navLetron {
+		a {
+			display: block;
+			text-align: center;
+			padding: 5px 10px;
+		}
+	}
+}
+@media screen and (max-width: 465px) {
+	.l-navLetron {
+		ul {
+			padding: 10px;
+		}
+		a {
+			font-size: 12px;
+		}
+	}
+}
+@media screen and (max-width: 400px) {
+	.l-navLetron {
+		a {
+			padding: 5px;
+		}
+	}
+}

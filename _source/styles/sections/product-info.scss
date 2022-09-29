@@ -1,0 +1,22 @@
+.product-info {
+    .product-buy .buy-button,
+    .product-buy .portal-notify-me-ref form .notifyme-form .notifyme-button-ok {
+        font-size: 12px !important;
+        background: $primary !important;
+        &:hover {
+            background: $primaryDark !important;
+        }
+    }
+
+    // fix - btn com texto incorreto
+    .product-buy {
+        .buy-button {
+            &:before {
+                display: none;
+            }
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

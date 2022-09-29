@@ -1,0 +1,250 @@
+$lpDomBosco__primary: #8EBF22;
+$lpDomBosco__primaryDark: #7ba818;
+$lpDomBosco__primaryLight: #a7d938;
+$lpDomBosco__secondary: #2DA3DD;
+$lpDomBosco__ff__lemonMilk: 'LEMON MILK';
+
+@font-face {
+    font-family: 'LEMON MILK';
+    src: url('https://leonora.vteximg.com.br/arquivos/font_lemonMilk.css') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@mixin lpDomBosco__titles($tc: $lpDomBosco__primary, $fs: 36px) {
+    display: block;
+    width: 100%;
+    font-size: $fs;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $tc;
+    font-family: $lpDomBosco__ff__lemonMilk;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+@mixin lpDomBosco__btns($bg: $lpDomBosco__primary, $bgH: $lpDomBosco__primaryLight) {
+    @include transition();
+    @include roundedAll(30px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: $bg;
+    height: 50px;
+    width: 100%;
+    max-width: 370px;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    font-family: $lpDomBosco__ff__lemonMilk;
+    &:hover,
+    &:focus,
+    &:active {
+        background: $bgH;
+        text-decoration: none !important;
+    }
+}
+@mixin lpDomBosco__btnCategorie() {
+    @include transition();
+    @include roundedAll(20px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: $lpDomBosco__secondary;
+    min-height: 40px;
+    width: 100%;
+    line-height: 1;
+    font-family: $lpDomBosco__ff__lemonMilk;
+    span {
+        display: block;
+        text-align: center;
+        color: $white;
+        font-weight: 700;;
+        text-transform: uppercase;
+        font-size: 15px;
+        z-index: 2;
+        //white-space: nowrap;
+        padding: 0 10px;
+        line-height: 1;
+        font-family: $lpDomBosco__ff__lemonMilk;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        background: $lpDomBosco__primary;
+        text-decoration: none;
+        &:before {
+            background: $lpDomBosco__primaryDark;
+        }
+        span {
+            text-decoration: none;
+        }
+    }
+    &.is-active {
+        background: $lpDomBosco__primary;
+    }
+}
+
+.l-landPage.--domBosco {
+    // components
+    .c-btnCategorie {
+        @include lpDomBosco__btnCategorie;
+    }
+
+    // features
+    .l-landPage__features {
+        position: relative;
+        .u-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+        }
+        h1 {
+            @include lpDomBosco__titles;
+        }
+        .c-btn {
+            @include lpDomBosco__btns($bg: $lpDomBosco__primaryLight, $bgH: $lpDomBosco__primary);
+        }
+    }
+
+    // countdown
+    .l-landPage__countdown {
+        background: $lpDomBosco__primary;
+        .c-countdown {
+            &__hero {
+                .captions {
+                    h3 {
+                        @include lpDomBosco__titles($tc: $white, $fs: 24px);
+                        text-align: left;
+                        margin-bottom: 6px;
+                    }
+                    span {
+                        display: block;
+                        text-align: center;
+                        color: $white;
+                        font-size: 12px;
+                    }
+                }
+                .c-count {
+                    &__item {
+                        .number,
+                        .caption {
+                            display: block;
+                            text-align: center;
+                            color: $white;
+                        }
+                        .number {
+                            font-size: 60px;
+                            line-height: 60px;
+                        }
+                        .caption {
+                            text-transform: uppercase;
+                            font-weight: $fwBold;
+                            font-size: 10px;
+                            display: none;
+                        }
+                    }
+                }
+            }
+            &__end {
+                p, span {
+                    display: block;
+                    text-align: center;
+                    color: $white;
+                    font-family: $lpDomBosco__ff__lemonMilk;
+                    font-size: 20px;
+                }
+                span {
+                    margin-top: 5px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    // collections
+    .l-landPage__collections {
+        display: block;
+        position: relative;
+        .u-container {
+            position: relative;
+            z-index: 2;
+        }
+        .l-landPage__collections__title {
+            h2 {
+                @include lpDomBosco__titles;
+                line-height: 0.75;
+                margin-bottom: 30px;
+            }
+        }
+        .l-landPage__collections__menu {
+            ul {
+                left: 0;
+                width: 100%;
+                padding-left: 0;
+            }
+        }
+        .c-btn {
+            @include lpDomBosco__btns($bg: $lpDomBosco__primaryLight, $bgH: $lpDomBosco__primary);
+        }
+    }
+
+    // shelf-item
+    .shelf-item {
+        border: 2px solid $lpDomBosco__primary;
+        &__flags {
+            .flag-percentage {
+                background: $lpDomBosco__secondary;
+                color: $white;
+                font-family: $lpDomBosco__ff__lemonMilk;
+                line-height: 0.9;
+            }
+        }
+        &__btns {
+            a {
+                @include transition();
+                background: $lpDomBosco__primary !important;
+                &:hover {
+                    background: $lpDomBosco__primaryDark !important;
+                }
+            }
+        }
+        &__price {
+            .shelf-item__best-price {
+                font-family: $lpDomBosco__ff__lemonMilk;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .l-landPage.--domBosco .l-landPage__collections .l-landPage__collections__menu ul>li {
+        max-width: inherit;
+        padding: 2px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .l-landPage.--domBosco .l-landPage__collections .l-landPage__collections__title h2 {
+        line-height: 1.25;
+        font-size: 32px;
+        br {
+            display: none !important;
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    .l-landPage.--domBosco .l-landPage__countdown .c-countdown__hero .captions h3 {
+        text-align: center;
+        font-size: 20px;
+    }
+    .l-landPage.--domBosco .l-landPage__countdown .c-countdown__hero .c-count__item .number {
+        font-size: 44px;
+        line-height: 44px;
+    }
+}

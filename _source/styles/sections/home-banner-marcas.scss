@@ -1,0 +1,12 @@
+@media screen and (min-width: 992px) {
+    #main .home-banner-marcas {
+        padding: 20px 0;
+        margin: 15px 0;
+        .box-banner {
+            * {
+                @include roundedAll(5px);
+                display: block;
+            }
+        }
+    }
+}

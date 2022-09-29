@@ -1,0 +1,12 @@
+.beon-showcase--carousel.beon-showcase--default {
+    .beon-showcase__item {
+        .beon-showcase__item-actions {
+            .beon-button.beon-button--primary {
+                background: $primary !important;
+                &:hover {
+                    background: $primaryDark !important;
+                }
+            }
+        }
+    }
+}

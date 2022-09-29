@@ -1,0 +1,12 @@
+.minicart-resume__checkout {
+    background: $primary !important;
+    &:hover {
+        background: $primaryDark !important;
+    }
+}
+
+.minicart-product__list-price {
+    font-size: 10px;
+    color: #979ca1;
+    margin-right: 5px;
+}

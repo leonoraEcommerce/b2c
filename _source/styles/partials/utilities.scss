@@ -1,0 +1,85 @@
+// opacity / visible
+.u-showElement {@include u-showElement;}
+.u-hideElement {@include u-hideElement;}
+.u-hideOpacity {@include opacity($opacity: 0);}
+.u-showOpacity {@include opacity($opacity: 1);}
+
+// display
+.u-dnone, .d-none, .dnone {display: none !important;}
+.u-dblock, .d-block, .dblock {display: block !important;}
+.u-dflex, .d-flex, .dflex {display: flex !important;}
+
+// overflow control
+.u-overflowBlocked {overflow: hidden;}
+.u-overflowBlocked_y {overflow-y: hidden;}
+.u-overflowBlocked_x {overflow-x: hidden;}
+
+// containers
+.u-container {
+	display: block;
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+// flex
+.u-wrap {flex-wrap: wrap;}
+.u-nowrap {flex-wrap: nowrap;}
+.u-wrapRev {flex-wrap: wrap-reverse;}
+.u-jcfe {justify-content: flex-end;}
+.u-jcfs {justify-content: flex-start;}
+.u-jcsb {justify-content: space-between;}
+.u-jcsa {justify-content: space-around;}
+.u-jcc {justify-content: center;}
+.u-aic {align-items: center;}
+.u-aifs {align-items: flex-start;}
+.u-aife {align-items: flex-end;}
+.u-fdr {flex-direction: row;}
+.u-fdc {flex-direction: column;}
+
+// default widths - used majority in float blocks
+.u-fw100 {@include flexWidth(100%)}
+.u-fw80 {@include flexWidth(80%)}
+.u-fw75 {@include flexWidth(75%)}
+.u-fw70 {@include flexWidth(70%)}
+.u-fw66 {@include flexWidth(66.6%)}
+.u-fw65 {@include flexWidth(65%)}
+.u-fw60 {@include flexWidth(60%)}
+.u-fw50 {@include flexWidth(50%)}
+.u-fw40 {@include flexWidth(40%)}
+.u-fw35 {@include flexWidth(35%)}
+.u-fw33 {@include flexWidth(33.3%)}
+.u-fw30 {@include flexWidth(30%)}
+.u-fw25 {@include flexWidth(25%)}
+.u-fw20 {@include flexWidth(20%)}
+.u-fw15 {@include flexWidth(15%)}
+.u-fw16 {@include flexWidth(16.6%)}
+.u-fw14 {@include flexWidth(14.28%)} //7cols
+.u-fw12 {@include flexWidth(14.5%)}
+.u-fw11 {@include flexWidth(11.11%)}
+.u-fw10 {@include flexWidth(10%)}
+.u-fw9 {@include flexWidth(9.09%)}
+.u-fw8 {@include flexWidth(15%)}
+
+// margins, paddings, borders
+.u-noMargin {margin: 0;}
+.u-noMarginLeft {margin-left: 0;}
+.u-noMarginRight {margin-right: 0;}
+.u-noMarginTop {margin-top: 0;}
+.u-noMarginBottom {margin-bottom: 0;}
+.u-noPadding {padding: 0;}
+.u-noPaddingLeft {padding-left: 0;}
+.u-noPaddingRight {padding-right: 0;}
+.u-noPaddingTop {padding-top: 0;}
+.u-noPaddingBottom {padding-bottom: 0;}
+.u-noBorder {border: 0;}
+.u-noBorderLeft {border-left: 0;}
+.u-noBorderRight {border-right: 0;}
+.u-noBorderTop {border-top: 0;}
+.u-noBorderBottom {border-bottom: 0;}
+
+// extras
+.u-noPointerEvents {
+	pointer-events: none;
+}

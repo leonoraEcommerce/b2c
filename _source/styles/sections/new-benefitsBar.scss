@@ -1,0 +1,19 @@
+.main {
+    .new-benefitsBar {
+        // default
+        .new-benefitsBar-item {
+            padding-top: 0;
+        }
+        .new-benefitsBar-item__text {
+            margin: 0;
+            padding-top: 0;
+        }
+
+        // mobile
+        .slick-initialized {
+            .new-benefitsBar-item {
+                padding-top: 8px;
+            }
+        }
+    }
+}
