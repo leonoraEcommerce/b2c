@@ -48,6 +48,7 @@ function gulpJS() {
             '_source/scripts/sections/product-info.js',
             '_source/scripts/landPages/lp__default.js',
             '_source/scripts/landPages/lp_domBosco.js',
+            '_source/scripts/landPages/lp_leotack.js',
             '_source/scripts/landPages/lp_letron.js'
         ])
         .pipe(concat('laures_leonoraB2C_frontEnd-min.js'))
@@ -68,8 +69,8 @@ function pluginJS() {
             '_source/libraries/isjs/is.min.js',
             '_source/libraries/enllax/jquery.enllax.min.js',
             //'_source/libraries/_forms/forms.min.js',
-            //'_source/libraries/fancybox/jquery.fancybox.min.js',
-            '_source/libraries/slick/slick.js',
+            '_source/libraries/fancybox/jquery.fancybox.min.js',
+            // '_source/libraries/slick/slick.js',
         ])
         .pipe(concat('laures_leonoraB2C_frontEndLibs-min.js'))
         .pipe(uglify())
@@ -82,8 +83,8 @@ function pluginCSS() {
             '_source/libraries/fancybox/jquery.fancybox.min.css',
             // '_source/libraries/swiper/swiper.min.css',
             // '_source/libraries/select2/dist/css/select2.min.css',
-            '_source/libraries/slick/slick.css',
-            '_source/libraries/slick/slick-theme.css',
+            // '_source/libraries/slick/slick.css',
+            // '_source/libraries/slick/slick-theme.css',
         ])
         .pipe(concat('laures_leonoraB2C_frontEndLibs-min.css'))
         .pipe(gulp.dest('dist/'));

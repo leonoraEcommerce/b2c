@@ -4,6 +4,10 @@ $letron__bg: #242424;
 $letron__bg__light: #393939;
 $letron__gradient: linear-gradient(180deg, #12132E 0%, #242424 100%), #202031;
 
+$letron__office: #149789;
+$letron__gamer: #B05EA8;
+$letron__acessorios: #18B2E6;
+
 @keyframes coverImg {
 	from {
 		@include transforms(rotate(0deg) translate(-5px), center);
@@ -26,7 +30,7 @@ $letron__gradient: linear-gradient(180deg, #12132E 0%, #242424 100%), #202031;
 @mixin s-letron__titles() {
 	display: block;
 	width: 100%;
-	text-align: center;
+	//text-align: center;
 	font-weight: $fwMedium;
 	font-size: 44px;
 	line-height: 52px;
@@ -151,7 +155,7 @@ body.landingPage__letron {
 	max-width: 1728px;
 	margin: 0 auto;
 	position: relative;
-	height: 590px;
+	height: 480px;
 	&__content {
 		@include flexWidth(100%);
 		position: relative;
@@ -165,7 +169,7 @@ body.landingPage__letron {
 			padding-right: 100px;
 		}
 		&__brand {
-			@include flexWidth(630px);
+			@include flexWidth(500px);
 			* {
 				display: block;
 				width: 100%;
@@ -198,12 +202,13 @@ body.landingPage__letron {
 		img {
 			@include transition;
 			@include animation_coverImg();
+			max-height: 620px;
 		}
 	}
 	&__effect {
 		position: absolute;
-		top: 0;
-		left: 0;
+		top: -10px;
+		left: -30px;
 		z-index: 2;
 		display: flex;
 		align-items: center;
@@ -216,6 +221,9 @@ body.landingPage__letron {
 			position: relative;
 			top: 45px;
 			padding-right: 25px;
+			img {
+				max-width: 500px;
+			}
 		}
 	}
 	&__bg {
@@ -236,7 +244,7 @@ body.landingPage__letron {
 }
 .l-contentLetron {
 	background: $letron__gradient;
-	padding-top: 160px;
+	padding-top: 120px;
 	padding-bottom: 80px;
 	display: block;
 	position: relative;
@@ -266,15 +274,77 @@ body.landingPage__letron {
 		z-index: 2;
 	}
 }
+
 .s-letron__quality {
 	.u-container {
-		max-width: 710px;
+		max-width: 1440px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	&__call {
+		@include flexWidth(580px);
+	}
+	&__videos {
+		flex: 1 1 auto;
+		padding-left: 40px;
+		ul {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: flex-start;
+			li {
+				@include flexWidth(33.3%);
+				padding: 10px;
+			}
+		}
+		.c-video {
+			@include transition();
+			@include scale(0.97, center);
+			@include roundedAll();
+			display: block;
+			width: 100%;
+			position: relative;
+			overflow: hidden;
+			* {
+				display: block;
+				max-width: 100%;
+			}
+			&:hover {
+				@include scale(1.025, center);
+			}
+			span {
+				@include roundedAll(50%);
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				width: 50px;
+				height: 50px;
+				background: white;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -25px;
+				margin-left: -25px;
+				i {
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 10px 0 10px 16px;
+					border-color: transparent transparent transparent $letron__bg__light;
+					position: relative;
+					left: 2px;
+				}
+			}
+		}
 	}
 	h2 {
 		@include s-letron__titles;
 	}
 	p {
-		@include s-letron__p($ta: center);
+		@include s-letron__p();
 	}
 }
 .s-letron__videos {
@@ -286,8 +356,22 @@ body.landingPage__letron {
 		max-width: 1440px;
 	}
 	&__head {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
 		h2 {
 			@include s-letron__titles;
+		}
+		span {
+			@include s-letron__p();
+			width: auto;
+			white-space: nowrap;
+			cursor: pointer;
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 	&__hero {
@@ -356,6 +440,7 @@ body.landingPage__letron {
 			}
 			&__btns {
 				a {
+					@include transition();
 					@include transforms(translateX(0), center);
 					left: 0;
 					bottom: 0;
@@ -434,6 +519,41 @@ body.landingPage__letron {
 			}
 		}
 	}
+
+	&#office {
+		.s-letron__shelve__head h2 {color: $letron__office;}
+		.s-letron__shelve__hero .shelf-item__btns a {
+			background: $letron__office !important;
+			&:hover {
+				background: darken($letron__office, 5%) !important;
+			}
+		}
+	}
+	&#gamer {
+		.s-letron__shelve__head h2 {color: $letron__gamer;}
+		.s-letron__shelve__hero .shelf-item__btns a {
+			background: $letron__gamer !important;
+			&:hover {
+				background: darken($letron__gamer, 5%) !important;
+			}
+		}
+	}
+	&#acessorios {
+		.s-letron__shelve__head h2 {color: $letron__acessorios;}
+		.s-letron__shelve__hero .shelf-item__btns a {
+			background: $letron__acessorios !important;
+			&:hover {
+				background: darken($letron__acessorios, 5%) !important;
+			}
+		}
+	}
+}
+
+
+.fancybox-container {
+	video {
+		max-height: 90vh;
+	}
 }
 
 // header
@@ -442,7 +562,7 @@ body.landingPage__letron {
 		height: 420px;
 	}
 	.l-headerLetron__content .u-container {
-		padding-right: 40px;
+		padding-right: 110px;
 	}
 	.l-headerLetron__content__brand {
 		@include flexWidth(430px);
@@ -465,6 +585,14 @@ body.landingPage__letron {
 		img {
 			max-height: 500px;
 		}
+	}
+}
+@media screen and (max-width: 1050px) {
+	.l-headerLetron__effect {
+		left: 0;
+	}
+	.l-headerLetron__content .u-container {
+		padding-right: 80px;
 	}
 }
 @media screen and (max-width: 960px) {
@@ -540,6 +668,17 @@ body.landingPage__letron {
 		}
 	}
 }
+@media screen and (max-width: 1240px) {
+	.s-letron__shelve__head {
+		flex-wrap: wrap;
+		justify-content: center;
+		//margin-bottom: 25px;
+		h2 {
+			@include flexWidth(100%);
+			text-align: center;
+		}
+	}
+}
 @media screen and (max-width: 780px) {
 	.l-contentLetron {
 		padding-top: 200px;
@@ -560,6 +699,38 @@ body.landingPage__letron {
 	}
 	.slick-slider.slick-initialized .slick-list {
 		width: 100% !important;
+	}
+}
+
+// quality videos
+@media screen and (max-width: 1320px) {
+	.s-letron__quality__call {
+		@include flexWidth(500px);
+	}
+	.s-letron__quality__videos {
+		padding-left: 30px;
+	}
+}
+@media screen and (max-width: 1240px) {
+	.s-letron__quality .u-container {
+		justify-content: center;
+		flex-wrap: wrap;
+		max-width: 740px;
+	}
+	.s-letron__quality__call {
+		@include flexWidth(100%);
+		margin-bottom: 30px;
+		h2, p {
+			text-align: center;
+		}
+	}
+	.s-letron__quality__videos {
+		padding-left: 0;
+	}
+}
+@media screen and (max-width: 560px) {
+	.s-letron__quality__videos ul li {
+		padding: 2px;
 	}
 }
 

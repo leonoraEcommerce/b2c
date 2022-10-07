@@ -41,13 +41,37 @@
         <div class="l-contentLetron__effect --b"><img src="/arquivos/lp_letron_effect_2.png"/></div>
         <div class="l-contentLetron__effect --c"><img src="/arquivos/lp_letron_effect_3.png"/></div>
         <div class="l-contentLetron__effect --d"><img src="/arquivos/lp_letron_effect_4.png"/></div>
-<!--        <section class="s-letron__quality" id="qualidade">-->
-<!--            <div class="u-container">-->
-<!--                <h2>Qualidade e Durabilidade</h2>-->
-<!--                <p>A Letron é o mais recente lançamento do Grupo Leonora. Ela traz a verdadeira tecnologia com-->
-<!--                    equipamentos de qualidade e precisão. Chegou a hora de explorar controle, movimento, energia e subir-->
-<!--                    de nível com equipamentos para PC e acessórios de conectividade. Agora você está equipado de-->
-<!--                    verdade.</p>-->
+        <section class="s-letron__quality" id="qualidade">
+            <div class="u-container">
+                <div class="s-letron__quality__call">
+                    <h2>Qualidade e Durabilidade</h2>
+                    <p>A Letron é o mais recente lançamento do Grupo Leonora. Ela traz a verdadeira tecnologia com
+                        equipamentos de qualidade e precisão. Chegou a hora de explorar controle, movimento, energia e subir
+                        de nível com equipamentos para PC e acessórios de conectividade. Agora você está equipado de
+                        verdade.</p>
+                </div>
+                <div class="s-letron__quality__videos">
+                    <ul>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=xib5PDAbCjI" class="c-video" data-fancybox="letronVideos">
+                                <img src="/arquivos/lp_letron_video_3.jpg">
+                                <span><i></i></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://b2c.grupoleonora.com.br/letron/lp_letron_video_2.mp4" class="c-video" data-fancybox="letronVideos">
+                                <img src="/arquivos/lp_letron_video_2.jpg">
+                                <span><i></i></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://b2c.grupoleonora.com.br/letron/lp_letron_video_1.mp4" class="c-video" data-fancybox="letronVideos">
+                                <img src="/arquivos/lp_letron_video_1.jpg">
+                                <span><i></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 <!--                <div class="s-letron__videos js-s-letron__videos">-->
 <!--                    <div>-->
 <!--                        <div class="c-letronVideo">-->
@@ -65,42 +89,13 @@
 <!--                        </div>-->
 <!--                    </div>-->
 <!--                </div>-->
-<!--            </div>-->
-<!--        </section>-->
-        <section class="s-letron__shelve --lancamentos" id="lancamentos">
-            <div class="u-container">
-                <div class="s-letron__shelve__head">
-                    <h2>Lançamentos</h2>
-                </div>
-                <div class="s-letron__shelve__hero js-s-letron__slickShelve">
-                    <vtex:contentPlaceHolder id="collection_lancamentos"/>
-                </div>
-            </div>
-        </section>
-        <section class="s-letron__shelve --gamer" id="gamer">
-            <div class="u-container">
-                <div class="s-letron__shelve__head">
-                    <h2>Linha Gamer</h2>
-                </div>
-                <div class="s-letron__shelve__hero js-s-letron__slickShelve">
-                    <vtex:contentPlaceHolder id="collection_gamer"/>
-                </div>
-            </div>
-        </section>
-        <section class="s-letron__shelve --acessorios" id="acessorios">
-            <div class="u-container">
-                <div class="s-letron__shelve__head">
-                    <h2>Acessórios</h2>
-                </div>
-                <div class="s-letron__shelve__hero js-s-letron__slickShelve">
-                    <vtex:contentPlaceHolder id="collection_acessorios"/>
-                </div>
             </div>
         </section>
         <section class="s-letron__shelve --office" id="office">
             <div class="u-container">
                 <div class="s-letron__shelve__head">
                     <h2>Linha Office</h2>
+<!--                    <span class="js-s-letron__shelve__toggleContent">Ver mais</span>-->
                 </div>
                 <div class="s-letron__shelve__hero js-s-letron__slickShelve">
                     <div class="main-shelf">

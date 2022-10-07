@@ -1,6 +1,6 @@
 <?php
 // init config
-$title = 'Laures Ronak | Boilerplate';
+$title = 'Leonora B2C | Edits & LP';
 // $pagina = explode('laures/', $_SERVER['REQUEST_URI']);
 $pagina = explode('/', $_SERVER['REQUEST_URI']);
 $classOnBody = 'p-inner';
@@ -48,6 +48,11 @@ switch ($pagina[1]) {
         break;
     case 'lp-letron' :
         $file = 'page_lp_letron.php';
+        $title_page = $title;
+        $classOnBody = 'p-inner lauresLandPages';
+        break;
+    case 'lp-leotack' :
+        $file = 'page_lp_leotack.php';
         $title_page = $title;
         $classOnBody = 'p-inner lauresLandPages';
         break;

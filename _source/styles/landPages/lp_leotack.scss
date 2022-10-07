@@ -1,0 +1,187 @@
+.l-landPage.--leotack {
+	.slick-dots {
+		text-align: right;
+		padding: 20px;
+		li {
+			button {
+				@include transition();
+				@include roundedAll(4px);
+				width: 11px;
+				height: 13px;
+				background: transparent;
+				border: 2px solid #5B5D71;
+				&:hover {
+					border: 2px solid #EF4B20;
+				}
+			}
+			&.slick-active {
+				button {
+					border: 2px solid #EF4B20;
+					background: #EF4B20;
+				}
+			}
+		}
+	}
+}
+
+.l-headerLeotack,
+.l-headerLeotackMobile {
+	a, a img {
+		display: block;
+		width: 100% !important;
+		height: auto !important;
+	}
+}
+
+.l-headerLeotackMobile {
+	display: none;
+}
+@media screen and (max-width: 780px) {
+	.l-headerLeotack {
+		display: none;
+	}
+	.l-headerLeotackMobile {
+		display: block;
+	}
+}
+
+.l-contentLeotack {
+	padding-top: 40px;
+	&__head {
+		* {
+			display: block;
+			text-align: center;
+			width: 100%;
+		}
+		h3 {
+			font-size: 14px;
+			color: #1A96BA;
+			letter-spacing: 1.5px;
+			text-transform: uppercase;
+		}
+		h2 {
+			white-space: nowrap;
+			font-size: 40px;
+			color: #1C2A4A;
+			font-weight: 300;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			strong {
+				color: #1C2A4A;
+				display: inline;
+				font-weight: 700;
+			}
+		}
+	}
+	&__content {
+		display: block;
+		margin: 0 auto;
+		max-width: 1140px;
+		width: 100%;
+		.main-shelf {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: center;
+			flex-wrap: wrap;
+			> h2 {
+				display: none;
+			}
+			> ul {
+				@include flexWidth(25%);
+				padding: 5px 15px !important;
+				> li {
+					width: 100%;
+					margin: 0 !important;
+					padding: 0 !important;
+				}
+			}
+		}
+		.shelf-item {
+			&:before {
+				display: none;
+			}
+			&__favorites {
+
+			}
+			&__flags {
+
+			}
+			&__image {
+				@include roundedAll(15px);
+			}
+			&__btns {
+				@include transition();
+				@include opacity(0);
+				position: relative;
+				 a {
+					 @include transition();
+					 background: #DC296A !important;
+					 bottom: inherit;
+					 top: -25px;
+					 &:hover {
+						 background: darken(#DC296A, 5%) !important;
+					 }
+				 }
+			}
+			&__info {
+				padding-top: 20px;
+			}
+			&__title {
+				min-height: 70px;
+				a {
+					color: #151D3F;
+					padding: 0;
+					margin: 0;
+					height: auto;
+				}
+			}
+			&__buy-info {
+				* {
+					color: #151D3F;
+				}
+			}
+
+			&:hover {
+				.shelf-item__btns {
+					@include opacity(1);
+				}
+			}
+		}
+	}
+	&__end {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		padding: 40px 0;
+		a {
+			@include transition();
+			@include roundedAll(25px);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 50px;
+			width: 100%;
+			max-width: 240px;
+			color: white;
+			font-weight: bold;
+			font-size: 20px;
+			background: #1C2A4A;
+			&:hover {
+				background: #151D3F;
+				text-decoration: none;
+			}
+		}
+	}
+}
+@media screen and (max-width: 1280px) {
+	.l-contentLeotack__content .main-shelf>ul {
+		@include flexWidth(33.3%);
+	}
+}
+@media screen and (max-width: 640px) {
+	.l-contentLeotack__content .main-shelf>ul {
+		@include flexWidth(50%);
+	}
+}
