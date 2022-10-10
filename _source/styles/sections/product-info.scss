@@ -1,3 +1,9 @@
+.product-info .product-name .productName {
+    text-transform: inherit !important;
+    font-size: 20px !important;
+    line-height: 1.4 !important;
+}
+
 .product-info {
     .product-buy .buy-button,
     .product-buy .portal-notify-me-ref form .notifyme-form .notifyme-button-ok {

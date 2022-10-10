@@ -11,6 +11,12 @@
         }
     }
 
+    .shelf-item__title-link,
+    .shelf-item__title,
+    .shelf-item__title-link *{
+        text-transform: inherit !important;
+    }
+
     .flag-percentage {
         display: none !important;
     }
